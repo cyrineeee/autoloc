@@ -2,6 +2,8 @@ package org.example.autoloc.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "agence")
@@ -22,4 +24,12 @@ public class Agence {
 
     @Column(length = 20)
     private String telephone;
+
+    // Atelier 2
+    @OneToMany(mappedBy = "agence")
+    private List<Employe> employes = new ArrayList<>();
+
+    // Atelier 2
+    @OneToMany(mappedBy = "agence")
+    private List<Vehicule> vehicules = new ArrayList<>();
 }

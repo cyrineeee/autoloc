@@ -19,4 +19,9 @@ public class Maintenance {
 
     @Column(length = 255)
     private String description;
+
+    // Atelier 2
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vehicule_id", nullable = false)
+    private Vehicule vehicule;
 }
